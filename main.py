@@ -13,7 +13,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Import Dataset
-data = pd.read_csv('/Users/paige/PycharmProjects/capstoneEucDist/SpotifyFeatures.csv')
+data = pd.read_csv('data.csv')
 # preview data
 data.head()
 
@@ -116,9 +116,11 @@ def euclidean_matrix(data, number, song, artist):
     print("\nSimilar songs to ", song_names[index], " by ", artist_names[index], "\n")
     for i in range(1, number + 1):
         print(i, "- ", song_names[p[i][1]], ", ", artist_names[p[i][1]])
+        a = song_names[p[i][1]]
+        b = artist_names[p[i][1]]
+    return a, b
 
-
-Song = input('Enter the Song Name : ')
-Artist = input('Enter the Artist Name: ')
-number = int(input('Enter Number of Recommendations You Would Like : '))
-euclidean_matrix(data, number, Song, Artist)
+# Song = input('Enter the Song Name : ')
+# Artist = input('Enter the Artist Name: ')
+# number = int(input('Enter Number of Recommendations You Would Like : '))
+# euclidean_matrix(data, number, Song, Artist)
