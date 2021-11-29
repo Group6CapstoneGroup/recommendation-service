@@ -28,6 +28,6 @@ def recommendations():
 
         track, artist = euclidean_matrix(data, 1, y["track"], y["artist"])
 
-        return "Here is your recommendation: " + str(artist) + " " + str(track)
+        return str(artist) + "%song%" + str(track)
     else:
         return "success response from GET call"
