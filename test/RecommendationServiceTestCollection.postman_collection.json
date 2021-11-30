@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "f1688aa1-a4d2-4b2e-b196-08bb075249e0",
+		"name": "RecommendationServiceTestCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const result = pm.response.text()\r",
+							"\r",
+							"\r",
+							"pm.test('Expected response from model based on input', function() {\r",
+							"  pm.expect(result).to.equal(\"Los Fabulosos Cadillacs%song%Matador - Remasterizado 2008\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"track\": \"Headstrong\",\r\n  \"artist\": \"Trapt\",\r\n  \"album\": \"testalbum\",\r\n  \"playlist\": \"myplaylist\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/recommendation",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"recommendation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
