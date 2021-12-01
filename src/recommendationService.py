@@ -1,11 +1,9 @@
 # recommendation-service requirement 1.0.3 The third is recommendationService.py.
 # This file is where we implement our Flask web app service that communicates with the UI
-
 import json
-
 from flask import Flask, request
 from flask_cors import CORS
-from main import euclidean_matrix,data
+from main import euclidean_matrix, data
 
 
 # Each method needs to have a unique name for a web app in flask or it will give you an error.
