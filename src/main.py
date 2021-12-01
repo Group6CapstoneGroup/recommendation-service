@@ -1,3 +1,4 @@
+# recommendation-service requirment: 1.0.2 The second is main.py. This file contains the recommendation model.
 # Citation:
 # https://www.kaggle.com/merveeyuboglu/music-recommendation-system-cosine-s/notebook
 
@@ -12,11 +13,17 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
+
+# recommendation-service requirement 1.1.0 The recommendation model will first need to open
+# and read all the lines of data from the csv file we are utilizing as a database
+# for the model to make it's predictions on.
 # Import Dataset
 data = pd.read_csv('data.csv')
 # preview data
 data.head()
 
+# recommendation-service requirement 1.1.1 We then need to clean the data so the model
+# will be able to digest it and its easier to work with.
 # rename some of the columns so they're easier to work with
 data.rename(columns={'artist_name': 'Artist', 'track_name': 'Song'}, inplace=True)
 # check dataframe again
@@ -92,6 +99,12 @@ def find_similar_songs(song, artist):
     return songs[0][0], indexes[0]
 
 
+# requirement 1.1.2 The file will also contain a method called
+# euclidean_matrix(data, numberOfRecommendations, song, artist). The purpose of this method is call the model
+# and get recommendation outputs the model generates from the algorithm it utilizes.
+# The inputs that are needed to be passed in are the data itself from the csv file, number of recommendations wanted,
+# song title, and artist. The method then returns the printed text of the song recommendation(s) it has made.
+
 # this function will call the find similar songs function and calculate the euclidean distance to determine which songs
 # are the closest fit to the user input, thus generating recommendations based on the song and artist
 def euclidean_matrix(data, number, song, artist):
@@ -119,8 +132,3 @@ def euclidean_matrix(data, number, song, artist):
         a = song_names[p[i][1]]
         b = artist_names[p[i][1]]
     return a, b
-
-# Song = input('Enter the Song Name : ')
-# Artist = input('Enter the Artist Name: ')
-# number = int(input('Enter Number of Recommendations You Would Like : '))
-# euclidean_matrix(data, number, Song, Artist)
