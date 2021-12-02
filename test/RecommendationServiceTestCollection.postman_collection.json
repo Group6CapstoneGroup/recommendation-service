@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "f1688aa1-a4d2-4b2e-b196-08bb075249e0",
+		"_postman_id": "2993905b-f94a-4d9e-9edc-7b6d6a181f0a",
 		"name": "RecommendationServiceTestCollection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "New Request",
+			"name": "Request to ML model for recommendation success",
 			"event": [
 				{
 					"listen": "test",
