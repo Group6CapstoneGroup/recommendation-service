@@ -24,7 +24,7 @@ If you're on a Mac the commands will be a little different to set the enviornmen
 - `export FLASK_APP=recommendationService.py`
 - `export FLASK_ENV=development`
 
-Once your enviornment variables are successfully set run the following command to launch your application on port 9999:
+Once your enviornment variables are successfully set run the following command to launch your application on port 9999 (this is important because the tests are testing against this specific port number):
 
 - `python -m flask run -p 9999`
 
