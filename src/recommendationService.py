@@ -16,6 +16,11 @@ app = Flask(__name__)
 CORS(app)
 
 
+@app.route('/')
+def default():
+    return "success!";
+
+
 # recommendation-service requirement 1.2.2 We then need to create a API endpoint with the
 # specified route: `/recommendations`. This endpoint will handle the POST request and interact with the model.
 @app.route('/recommendation', methods=["GET", "POST"])
