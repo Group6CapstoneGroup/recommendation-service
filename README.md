@@ -32,6 +32,8 @@ To verify that you are successfully connected please click this [link](http://12
 
 success response from GET call
 
+For a detailed video demo of the setup instructions please click [here](https://www.youtube.com/watch?v=Xwsb9nwrWtg).
+
 ## Recommendation Model
 
 ### Euclidean-distance
