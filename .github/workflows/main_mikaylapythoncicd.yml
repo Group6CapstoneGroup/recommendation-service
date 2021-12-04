@@ -30,7 +30,8 @@ jobs:
       - name: Install dependencies
         run: pip freeze > requirements.txt
         
-      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: Integration Test
+        run: newman run test/RecommendationServiceTestCollection.postman_collection.json -e test/RecommendationServiceTestEnviornment.postman_environment.json
       
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
